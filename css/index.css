@@ -1,0 +1,92 @@
+html{
+	position: relative;
+	min-height: 100%;
+}
+body {background:#7cbac1; margin: 0;}
+
+.logo{
+	line-height: 60px;
+	margin: 16px 46px;
+	color: #fff;
+	font-size: 20px}
+.titulo {
+	color:#fff;
+	margin:10px 0 50px 0;
+	font-weight:300}
+/*Container*/
+.main {
+	background: #fff;
+	border-radius: 10px;
+	width: 50%;
+	padding: 40px 50px 70px 50px}
+/*INPUTS DO FORMULARIO*/
+#form{
+	width: 100%;
+	height: 45px;
+	outline: none;
+	font-size: 18px;
+	border-radius: 5px}
+/*ALTERAR O PLACAHOLDER*/
+::-webkit-input-placeholder{/*chrome*/
+	color:#636363;
+	padding: 10px;
+	font-family: sans-serif
+}
+:-moz-placeholder{/*Firefox 4 até 18*/
+	color:#636363;
+	padding: 10px;
+	font-family: sans-serif}
+::-moz-placeholder{
+	color:#636363;
+	padding: 10px;
+	font-family: sans-serif}
+:-ms-input-placeholder{/*Firefox 19*/
+	color:#636363;
+	padding: 10px;
+	font-family: sans-serif}
+
+#botao{
+	background: #fff;
+	border-color: #8c8a8a;
+	color: #000;
+	font-size: 14px;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	padding: 0}
+
+#botao:hover{
+	background: #e2e2e2;
+	color: #fff;
+	-webkit-transition: all .6s ease-out;
+	-moz-transition: all .6s ease-out;
+	-o-transition: all .6s ease-out}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color:#fff;
+    font-size: 9px;
+}
+
+@media only screen and (max-width: 1024px){
+	.main{
+		margin-top:15%;
+		width: 98%;
+		zoom:1.5;
+		padding: 40px 30px 70px 30px}
+	#form{height: 60px}
+}
+@media only screen and (max-width: 420px){
+	.main{
+		zoom:0;
+		margin-top: -8%;
+		padding: 40px 30px 70px 30px}
+	.titulo{
+		font-size: 25px;
+		margin-top: -3%}
+	.logo{line-height: 40px}
+
+}
