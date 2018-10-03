@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
   <meta http-eqiv="X-UA-Compatible" content="IE=edge" />
 
@@ -20,48 +21,26 @@
   <div class="container">
     <div class="row">
       <!-- ADICIONAR O WHILE DO PHP AQUI -->
+     <?php
+     include "banco.php";
+     $pesquisar = "select * from categorias";
+     $buscar = mysqli_query($con,$pesquisar); 
+     while($b=mysqli_fetch_assoc($buscar)){
+      ?> 
       <div class="col-md-3">
         <a href="sintomas.php" id="link">
           <div class="categoria">
             <div class="botao pb-4">
               <img src="img/semft.png" class="img-fluid" />
-              <h3>BRAÇO</h3><!-- buscar nome do banco -->
+              <h3><?php echo $b['categorias']; ?></h3>
+              <!-- buscar nome do banco -->
             </div>
         </div>
       </a>
       </div>
-      <!-- FECHAR PHP -->
-
-      <div class="col-md-3">
-        <a href="sintomas.php" id="link">
-          <div class="categoria">
-            <div class="botao pb-4">
-              <img src="img/semft.png" class="img-fluid" />
-              <h3>PERNA</h3>
-            </div>
-        </div>
-      </a>
-      </div>
-
-      <div class="col-md-3">
-        <a href="sintomas.php" id="link">
-          <div class="categoria">
-            <div class="botao pb-4">
-              <img src="img/semft.png" class="img-fluid" />
-              <h3>TORAX</h3>
-            </div>
-          </div>
-      </a>
-      </div>
-
-      <div class="col-md-3">
-        <a href="sintomas.php" id="link">
-          <div class="categoria">
-            <div class="botao pb-4">
-              <img src="img/semft.png" class="img-fluid" />
-              <h3>COSTAS</h3>
-            </div>
-          </div>
+      <?php
+     }
+      ?>
       </a>
       </div>
     </div>

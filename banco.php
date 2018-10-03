@@ -1,3 +1,3 @@
 <?php 
-$con = mysqli_connect("localhost", "root", "", "sistema");
+$con = mysqli_connect("localhost", "root", "", "sintomas");
 ?>
