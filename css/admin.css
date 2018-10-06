@@ -1,0 +1,95 @@
+html{
+	position: relative;
+	min-height: 100%
+}
+header{
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-between; 
+}
+body {background:#7cbac1; margin: 0}
+.out{
+	margin: 15px 46px;
+}
+.logo{
+	margin: 16px 46px;
+	color: #fff;
+	font-size: 20px
+}
+.titulo {
+	color:#fff;
+	margin:10px 0 50px 0;
+	font-weight:300
+}
+.pesq {border: none}
+
+.pesq:focus {
+	border: none;
+	outline: none;
+	box-shadow: none
+}
+
+#botao{
+	background: #fff;
+	color: #8c8a8a;
+	height: 87px;
+	display: block;
+	border-radius: 0;
+	border-left: 1px solid #9b9b9b;
+	font-size: 20px;
+	position: absolute;
+	right: 0;
+	top: -41%
+}
+#botao:hover{
+	background: #0000;
+	color: #000;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out
+}
+.card-counter{
+	box-shadow: 2px 2px 10px #DADADA;
+	margin: 5px;
+	padding: 37px;
+	text-align: center;
+	background: #c10101;
+	color: #fff;
+	font-weight: 300;
+	font-family: sans-serif;
+	height: 100px;
+	border-radius: 5px;
+	transition: .3s linear all;
+}
+
+.card-counter:hover{
+	background: rgba(193, 1, 1, 0.6);
+	cursor: pointer;
+}
+#a{text-decoration: none;}
+.itens{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;  
+}
+.box{margin: 0}
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	color:#fff;
+	font-size: 9px;
+}
+@media only screen and (max-width: 420px){
+	::-webkit-input-placeholder{font-size:15px}
+	:-moz-placeholder{font-size:15px}
+	::-moz-placeholder{font-size:15px}
+	:-ms-input-placeholder{font-size:15px}
+	.itens{flex-direction: column;}
+	.box{
+		display: flex;
+		flex-flow: row ;
+		justify-content: center;
+	}
+}
