@@ -6,18 +6,16 @@ $pressao = $_POST['pressao'];
 
 include 'banco.php';
 
-$query = "insert into acesso (nomepac, idade, altura, pressao),
+$query = "insert into paciente (nomepac, idade, altura, pressao)
  values ('$nomepac', '$idade', '$altura', '$pressao')";
 
  mysqli_query($con,$query);
 
  session_start();
-	$_SESSION['nome'] =  $nome;
-	
-	setcookie("nome", $nome, time()+600);
+	$_SESSION['nomePac'] =  $nome;
 	
 
-header("Location: login.php");
+header("Location: categorias.php");
 
 
 ?>

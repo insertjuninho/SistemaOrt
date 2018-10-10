@@ -35,7 +35,7 @@
       <!--------->
       <!-- BOTÕES -->
       <div class="itens text-center">
-        <a href="categorias.php" class="btn"><img src="img/paci.png" width="35" class="mr-2 img-fluid">CADASTRAR NOVO PACIENTE</a>
+        <a href="cadPaciente.php" class="btn"><img src="img/paci.png" width="35" class="mr-2 img-fluid">CADASTRAR NOVO PACIENTE</a>
       </div>
       <div class="itens text-center">
         <a href="" class="btn"><img src="img/lista.png" class="mr-2 img-fluid">LISTA DE PACIENTES</a>

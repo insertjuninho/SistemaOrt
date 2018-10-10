@@ -24,11 +24,11 @@
         <input type="text" name="crm" id="form" placeholder="CRM" required>
       </div>
       <div class="form-group">
-        <input type="text" name="telefone" id="form" placeholder="Telefone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+        <input type="text" name="situacao" id="form" placeholder="Situacao" required>
       </div>
 
       <div class="form-group">
-        <input type="text" name="endereco" id="form" placeholder="Enedreço" required>
+        <input type="text" name="estado" id="form" placeholder="Estado" required>
       </div>
       <button type="submit" class="btn mt-3" id="botao">CADASTAR</button>
     </form>

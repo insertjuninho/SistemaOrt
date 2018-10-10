@@ -1,6 +1,21 @@
+<?php 
+/*session_start();
+  if(empty($_SESSION['crm']) and empty($_COOKIE['crm'])){
+   header("Location:index.php"); 
+ }else{
+    if(isset($_SESSION['crm'])){
+      $crm = $_SESSION['crm'];
+    }
+    if($crm != '202'){
+      header("Location:admin.php"); 
+    }
+  }
+*/
+ //?>
 <!doctype html>
 <html lang="pt-br">
 <head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
   <meta http-eqiv="X-UA-Compatible" content="IE=edge" />
 
@@ -40,7 +55,7 @@
     <div class="box">
       <a id="a" href="cadMedico.php">
         <div class="card-counter">
-          <p>CADASTAR MÉDICO</p>
+          <p>CADASTRAR MÉDICO</p>
         </div>
       </a>
        <a id="a" href="">
@@ -52,7 +67,7 @@
     <div class="box">
       <a id="a" href="cadMedico.php">
         <div class="card-counter">
-          <p>CADASTAR PACIENTE</p>
+          <p>CADASTRAR PACIENTE</p>
         </div>
       </a>
        <a id="a" href="">
@@ -63,30 +78,18 @@
     </div>
 
     <div class="box">
-      <a id="a" href="">
+      <a id="a" href="addCategorias.php">
         <div class="card-counter">
-          <P>ADCIONAR CATEGORIA</P>
+          <P>ADICIONAR CATEGORIAS</P>
         </div>
       </a>  
-      <a id="a" href="">
+      <a id="a" href="editc.php">
         <div class="card-counter" >
           <P>EDITAR CATEGORIAS</P>
         </div>
       </a>  
     </div>
 
-    <div class="box">
-      <a id="a" href="">
-        <div class="card-counter">
-          <P>ADCIONAR SINTOMA</P>
-        </div>
-      </a>  
-      <a id="a" href="">
-        <div class="card-counter">
-          <P>EDITAR SINTOMAS</P>
-        </div>
-      </a>  
-    </div>
   </div>
 </div>
 

@@ -18,6 +18,18 @@ else{
   unset ($_SESSION['crm']);
   header("Location:index.php");
    
+    
   }
+   if(isset($_SESSION ['crm'])){
+     $crm = $_SESSION['crm'];
+      }
+     if($crm == '202'){
+
+     	header("Location:admin.php");
+     }else{
+     	header("index.php");
+     }
+                            
+                   
 ?>
- ?>
+ 
