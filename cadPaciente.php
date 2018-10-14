@@ -13,7 +13,7 @@
   <header>
     <p class="logo">LOGO</p>
   </header>
-  <h1 class="text-center titulo">Faça seu login no Sistema</h1>
+  <h1 class="text-center titulo"><?php echo "Cadastro de um novo Paciente"; ?></h1>
   <div class="main container">
     <form id="Login" action="cadPac.php" method="post">
       <div class="form-group">
@@ -35,7 +35,7 @@
   </div>
   
   <footer>
-    <p>Desenvolvido por ©ACCIO - 2018</p>
+    <p><?php echo "Desenvolvido por ©ACCIO - 2018"; ?></p> 
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

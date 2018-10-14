@@ -1,3 +1,9 @@
+<?php
+session_start();
+include "banco.php";
+$pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+$query = "select * from acesso limit 1";
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -14,7 +20,13 @@
     <p class="logo">LOGO</p>
     <a href="sair.php"><img src="img/out.png" class="out img-fluid"></a>
   </header>
-  <h1 class="text-center titulo"><?php echo 'Nome do Médico' ?></h1>
+  <?php
+     $consulta = mysqli_query($con, $query);
+     while($f = mysqli_fetch_array($consulta)){
+      $nomeMed = $f['nomeMed'];
+   ?>
+    <h1 class="text-center titulo"><?php echo "Bem vindo Doutor(a):". $nomeMed; ?></h1>
+  <?php } ?>
   <div class="container">
     <!-- FORM DE PESQUISA -->
     <div class="row justify-content-center">
@@ -43,7 +55,7 @@
   </div>  
 
 <footer>
-  <p>Desenvolvido por ©ACCIO - 2018</p>
+  <p><?php echo "Desenvolvido por ©ACCIO - 2018"; ?></p> 
 </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
