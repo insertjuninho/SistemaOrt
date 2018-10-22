@@ -1,5 +1,5 @@
-//formulario de cadastro
-//jQuery time
+
+
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
@@ -25,9 +25,9 @@ $(".next").click(function(){
 			//3. increase opacity of next_fs to 1 as it moves in
 			opacity = 1 - now;
 			current_fs.css({
-        'transform': 'scale('+scale+')',
-        'position': 'absolute'
-      });
+				'transform': 'scale('+scale+')',
+				'position': 'absolute'
+			});
 			next_fs.css({'left': left, 'opacity': opacity});
 		}, 
 		duration: 800, 
@@ -35,11 +35,10 @@ $(".next").click(function(){
 			current_fs.hide();
 			animating = false;
 		}, 
-		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
+		
 	});
 });
-
 $(".previous").click(function(){
 	if(animating) return false;
 	animating = true;
@@ -61,22 +60,33 @@ $(".previous").click(function(){
 			//3. increase opacity of previous_fs to 1 as it moves in
 			opacity = 1 - now;
 			current_fs.css({'left': left});
-			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+			previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity,});
 		}, 
 		duration: 800, 
 		complete: function(){
 			current_fs.hide();
 			animating = false;
 		}, 
-		//this comes from the custom easing plugin
+		//plugin de animação
 		easing: 'easeInOutBack'
 	});
 });
+
+
 /*MUDAR A COR DO RADIO DEPIS DE CLICADO*/
 $(document).ready(function(){
 	$('input').on('click', function() {
-	    $('.radio').parent().css('opacity', '2');
-	    $('.radio:checked').parent().css('opacity', '0.4');
-	  });
- });
+		$('.radio').parent().css('opacity', '2');
+		$('.radio:checked').parent().css('opacity', '0.4');
+	});
+
+});
+/*var next = document.getElementById('next');
+var voltar = document.getElementById('voltar');
+
+next.addEventListener('click', function() {
+  voltar.style.display = 'inline-block';
+});
+*/
+
 

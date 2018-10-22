@@ -5,23 +5,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
  <meta http-eqiv="X-UA-Compatible" content="IE=edge" />
  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
- <link rel="stylesheet" type="text/css" href="sint.css">
- <style>
- #f2,#f3,#f4{
-  display: none;
-}
-</style>
-<!-- <script>
-  function proxima(x){
-    document.getElementById("f1").style.display = "none";
-    document.getElementById("f2").style.display = "none";
-    document.getElementById("f3").style.display = "none";
-    //document.getElementById("f4").style.display = "none";
-    console.log(x);
-    document.getElementById("f"+x).style.display = "block";  
-  }
-
-</script> -->
+ <link rel="stylesheet" type="text/css" href="css/sint.css">
 <title>SISTEMA</title>
 </head>
 <body>
@@ -48,7 +32,7 @@
         $f=1;
         $r=mysqli_num_rows($resultado); 
         echo "<fieldset id='f{$f}'>";
-
+        $a = 0;
         for($x=0; $x<$r;$x++){
           if($i<=3){
             $i++;
@@ -58,26 +42,26 @@
               <label class="radio">
                 <div class="categoria">
                   <img src="img/ft.jpg" class="img-fluid" >
-                  <input type="radio" name="page7" value="sintoma25" class="radio">
+                  <input type="radio" name="page1" value="<?php echo $k[$x] ?>" class="radio">
                   <p><?php echo $k[$x]; ?></p>
                 </div>
               </label>
             </div>
 
             <?php
-
           }else{
-            //  $f++;
-            echo "<input type='button' name='next' class='next action-button' value='Próximo'/></fieldset>";
+         	echo "<input type='button' name='previous' class='previous action-button-previous' value='Voltar' id='voltar'/>";
+            echo "<input type='button' name='next' class='next action-button' value='Próximo' id='next'/></fieldset>";
+
             $i=0;
-            $x=$x-1;
-            
+            $x=$x-1;            
             ?>
-            <fieldset id="<?php echo $f."OK2" ?>">
+            <fieldset id="<?php echo $f ?>"> 
               <?php 
             }
           }
-
+          echo "<input type='button' name='previous' class='previous action-button-previous' value='Voltar'/>";
+          echo "<input type='submit' name='submit' class='action-button' value='Cadastrar'/>";
           ?>
         </fieldset>
       </form>
@@ -87,7 +71,7 @@
 <footer>
   <p><?php echo "Desenvolvido por © ACCIO-2018"; ?></p>
 </footer>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 <script src="js/script.js"></script>
