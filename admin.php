@@ -68,7 +68,7 @@
           <p>CADASTRAR PACIENTE</p>
         </div>
       </a>
-       <a id="a" href="">
+       <a id="a" href="listPac.php">
         <div class="card-counter">
           <p>LISTA DE PACIENTES</p>
         </div>

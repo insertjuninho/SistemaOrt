@@ -1,0 +1,74 @@
+html{
+	position: relative;
+	min-height: 100%
+}
+header{
+	display: flex;
+	flex-direction: row; 
+	justify-content: space-between; 
+}
+body {background:#7cbac1; margin: 0}
+.out{
+	margin: 15px 46px;
+}
+.logo{
+	margin: 16px 46px;
+	color: #fff;
+	font-size: 20px
+}
+.titulo {
+	color:#fff;
+	margin:10px 0 50px 0;
+	font-weight:300
+}
+.pesq {border: none}
+
+.pesq:focus {box-shadow: none}
+
+
+.table{
+    background-color:#fff;
+    box-shadow:0px 4px 4px rgba(0,0,0,0.3);
+    margin-top:50px;
+}
+
+tr:nth-child(even) {
+    background-color: #d3d3d3;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color:#fff;
+    font-size: 9px;
+}
+#user{
+  border-radius: 100px;
+}
+.low{
+  display: none;
+}
+.table>tbody>tr>td{
+    vertical-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  
+  .low{
+    display: block;
+  }
+    table#func tbody td .form-control{
+    width:20%;
+    display: inline !important;
+  }
+
+  table#func thead { display:none; }
+  table#func tbody td { display: block; padding: .3rem; min-width:320px;}
+  table#func tbody tr td:first-child { background: #ccc; color: #fff; }
+  table#func tbody td:before {
+    content: attr(data-th); font-weight: bold;
+    display: inline; width: 5rem; 
+  }  
+ 
+}   
