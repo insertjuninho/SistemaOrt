@@ -41,13 +41,13 @@ if(empty($_SESSION['usuario']) and empty($_SESSION['senha'])){?>
     <!-- FORM DE PESQUISA -->
     <div class="row justify-content-center">
       <div class="col-12 col-md-10 col-lg-12">
-        <form class="card card-sm" method="get">
+        <form class="card card-sm" method="get" action="pesquisar.php">
           <div class="card-body row no-gutters align-items-center">
             <div class="col-auto">
               <img src="img/search.png" class="img-fuid">
             </div>
             <div class="col">
-              <input class="pesq form-control form-control-lg" type="search" name="pesq" placeholder="Pesquisar Paciente">
+                <input class="pesq form-control form-control-lg" type="text" name="pesq" placeholder="Pesquisar Paciente">
               <button class="btn" type="submit" id="botao">Pesquisar</button>
             </div>
           </div>
