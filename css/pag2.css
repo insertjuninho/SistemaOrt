@@ -19,8 +19,8 @@ body {background:#7cbac1; margin: 0}
 .titulo {
 	color:#fff;
 	margin:10px 0 50px 0;
-	font-weight:300
-}
+	font-weight:300;}
+#nome{text-transform: capitalize;}	
 .pesq {border: none}
 
 .pesq:focus {

@@ -22,7 +22,7 @@
      <table class="table" id="func">
       <thead>
         <tr>
-          <th style="width:5%">ID</th>
+          <th style="width:3%">ID</th>
           <th style="width:50%">Nome</th>
           <th style="width:45%">Ação</th>
         </tr>
@@ -35,12 +35,12 @@
           <td id="name">sknfvsfnbnksfnbknskfnbksnfkbnksbksnk</td>
           <td data-th="Ação" class="low"></td>
           <td class="td-actions">
-            <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
-              <i class="material-icons">editar</i>
-            </button>
-            <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
+            <a href="ediPac.php"><button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
+              <i class="material-icons">Detalhes</i>
+            </button></a>
+            <a href="historicoPAC.php"><button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
               <i class="material-icons">histórico</i>
-            </button>
+            </button></a>
             <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
               <i class="material-icons">deletar</i>
             </button>
@@ -54,7 +54,7 @@
           <td data-th="Ação" class="low"></td>
           <td class="td-actions">
             <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
-              <i class="material-icons">editar</i>
+              <i class="material-icons">Detalhes</i>
             </button>
             <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
               <i class="material-icons">histórico</i>
@@ -72,7 +72,7 @@
           <td data-th="Ação" class="low"></td>
           <td class="td-actions">
             <button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
-              <i class="material-icons">editar</i>
+              <i class="material-icons">Detalhes</i>
             </button>
             <button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
               <i class="material-icons">histórico</i>

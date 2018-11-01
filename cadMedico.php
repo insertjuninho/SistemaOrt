@@ -14,32 +14,55 @@
     <p class="logo">LOGO</p>
   </header>
   <h1 class="text-center titulo">Faça seu login no Sistema</h1>
-  <div class="main container">
-    <form id="Login" action="cadMed.php" method="post">
-      <div class="form-group pb-2">
-        <input type="text" id="form" name="nomeMed" placeholder="Nome" required>
-      </div>
-      
-      <div class="form-group">
-        <input type="text" name="crm" id="form" placeholder="CRM" required>
-      </div>
-      <div class="form-group">
-        <input type="text" name="situacao" id="form" placeholder="Situacao" required>
-      </div>
+  <div class="container register">
+    <div class="register-right">
+      <form id="Login" action="cadMed.php" method="post">
+        <div class="row register-form">
 
-      <div class="form-group">
-        <input type="text" name="estado" id="form" placeholder="Estado" required>
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" id="form" name="usuario" placeholder="Usúario" required>
+            </div>
+
+            <div class="form-group">
+              <input type="password" id="form" name="senha" placeholder="Senha" required>
+            </div>
+
+            <div class="form-group">
+              <input type="text" name="senha" id="form" disabled>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" name="nomeMed" id="form" placeholder="Nome" required>
+            </div>
+
+            <div class="form-group">
+             <input type="text" name="crm" id="form" placeholder="CRM" required>
+           </div>
+
+           <div class="form-group">
+            <select name="situacao" id="select">
+              <option disabled selected>Situação</option>
+              <option value="Ativo">Ativo</option>
+              <option value="Inativo">Inativo</option>
+            </select>
+          </div>
+          <input type="submit" class="btnRegister"  value="Cadastrar"/>
+        </div>
+
       </div>
-      <button type="submit" class="btn mt-3" id="botao">CADASTAR</button>
     </form>
   </div>
-  
-  <footer>
-    <p>Desenvolvido por ©ACCIO - 2018</p>
-  </footer>
+</div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<footer>
+  <p>Desenvolvido por ©ACCIO - 2018</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

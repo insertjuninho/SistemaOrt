@@ -14,25 +14,32 @@
     <p class="logo">LOGO</p>
   </header>
   <h1 class="text-center titulo"><?php echo "Cadastro de um novo Paciente"; ?></h1>
-  <div class="main container">
-    <form id="Login" action="cadPac.php" method="post">
-      <div class="form-group">
-        <input type="text" name="nomePac" id="form" placeholder="Nome do Paciente" required>
-      </div>
-      <div class="form-group">
-        <input type="text" name="idade" id="form" placeholder="Idade" required>
-      </div>
-
-      <div class="form-group">
-        <input type="text" name="altura" id="form" placeholder="Altura" required>
-      </div>
-
-       <div class="form-group">
-        <input type="text" name="pressao" id="form" placeholder="Pressao" required>
-      </div>
-      <button type="submit" class="btn mt-3" id="botao">CADASTAR</button>
+  <div class="container register">
+    <div class="register-right">
+        <form id="Login" action="cadPac.php" method="post">
+            <div class="row register-form">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" name="nomePac" id="form" placeholder="Nome do Paciente" 
+                        required>
+                    </div>
+                    <div class="form-group">
+                       <input type="text"  name="idade" id="form" placeholder="Idade" required>
+                   </div>
+               </div>
+               <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" name="altura" id="form" placeholder="Altura" required> 
+                </div>
+                <div class="form-group">
+                    <input type="text" id="form" name="pressao" placeholder="Pressão" required>
+                </div>
+                <input type="submit" class="btnRegister"  value="Proximo"/>
+            </div>
+        </div>
     </form>
-  </div>
+</div>
+</div>
   
   <footer>
     <p><?php echo "Desenvolvido por ©ACCIO - 2018"; ?></p> 

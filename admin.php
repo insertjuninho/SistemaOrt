@@ -1,17 +1,24 @@
 <?php 
-/*session_start();
-  if(empty($_SESSION['crm']) and empty($_COOKIE['crm'])){
-   header("Location:index.php"); 
- }else{
-    if(isset($_SESSION['crm'])){
-      $crm = $_SESSION['crm'];
-    }
-    if($crm != '202'){
-      header("Location:admin.php"); 
-    }
+  include "banco.php";
+session_start();
+
+if(empty($_SESSION['usuario']) and empty($_SESSION['senha'])){?>
+  <script>
+    alert("VOCÊ PRECISA ESTAR LOGADO COM ADM PARA ACESSAR ESTA PAGINA!");window.location.href='index.php';
+  </script>
+  <?php 
+}else{
+  if(isset($_SESSION['usuario'])){
+    $usuario = $_SESSION['usuario'];
+    $query = "select * from acesso where usuario = '$usuario'";
+    $consulta = mysqli_query($con, $query);
   }
-*/
- //?>
+  if($usuario != 'accioadmin'){
+  ?>
+  <script>
+    alert("VOCE PRECISA SER UM ADMINSTRADOR PARA ACESSAR ESTA PÁGINA!");window.location.href='index.php';
+  </script>
+<?php } }?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -27,7 +34,12 @@
     <p class="logo">LOGO</p>
     <a href="sair.php"><img src="img/out.png" class="out img-fluid"></a>
   </header>
-  <h1 class="text-center titulo"><?php echo 'Nome do ADM' ?></h1>
+  <?php 
+    while($f = mysqli_fetch_assoc($consulta)){
+    $nomeMed = $f['nomeMed']; 
+   ?>
+  <h1 class="text-center titulo"><?php echo "Bem vindo(a): <span id='nome'>$nomeMed<span>" ?></h1>
+  <?php } ?>
   <div class="container">
     <!-- FORM DE PESQUISA -->
     <div class="row justify-content-center">
@@ -87,7 +99,6 @@
         </div>
       </a>  
     </div>
-
   </div>
 </div>
     <footer>

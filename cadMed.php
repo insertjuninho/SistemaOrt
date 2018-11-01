@@ -1,22 +1,23 @@
 <?php
-$nomeMed  = $_POST['nomeMed'];
-$crm      = $_POST['crm'];
-$situacao = $_POST['situacao'];
-$estado   = $_POST['estado'];
+	$usuario  = $_POST['usuario'];
+	$senha    = $_POST['senha'];
+	$nomeMed  = $_POST['nomeMed'];
+	$crm      = $_POST['crm'];
+	$situacao = $_POST['situacao'];
 
-include 'banco.php';
+	include 'banco.php';
 
-$query = "insert into  acesso(nomeMed, crm, situacao, estado)
-			 values ('$nomeMed', '$crm', '$situacao', '$estado')";
+	$query = "insert into  acesso(usuario, senha, nomeMed, crm, situacao)
+	values ('$usuario', '$senha', '$nomeMed', '$crm', '$situacao')";
 
- mysqli_query($con,$query);
+	$insert = mysqli_query($con, $query);
 
- session_start();
-	$_SESSION['nome'] =  $nome;
-	$_SESSION['crm']  =  $crm;
-
-
- header("Location:admin.php"); 
-
-
-?>
+	if($insert == 1){?>
+		<script>
+			alert("MEDICO CADASTRADO");window.location.href='index.php';
+		</script>
+	<?php }else{ ?>
+		<script>
+			alert("OPS!! OCORREOU UM ERRO, TENTE NOVAMENTE!!");window.location.href='cadMedico.php';
+		</script>
+<?php } ?>
