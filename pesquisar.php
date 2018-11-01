@@ -30,13 +30,14 @@
   }
   ?>
   <div class="container d-flex justify-content-center">
+      <div class="col-md-10">
+      	
       <?php
     while($p = mysqli_fetch_array($consulta)){
     $id = $p['idPac'];
     $nome = $p['nomePac'];
 
   ?>
-      <div class="col-md-10">
         <div class="card mt-5">
           <div class="card-header">
             <h4 class="card-title"><?php echo "Identeifcação - $id" ?></h4>
@@ -60,8 +61,8 @@
             </div>
 
           </div>
-        </div>
     <?php } ?>
+        </div>
     </div>
   
   <footer>

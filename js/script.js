@@ -81,13 +81,9 @@ $(document).ready(function(){
 	});
 
 });
-/*var next = document.getElementById('next');
-var voltar = document.getElementById('voltar');
 
-next.addEventListener('click', function() {
-  voltar.style.display = 'inline-block';
-});
-*/
+
+//FILTRO DE TABLE 
 $(document).ready(function(){
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
