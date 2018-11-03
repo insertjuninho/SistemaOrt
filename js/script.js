@@ -85,12 +85,41 @@ $(document).ready(function(){
 
 //FILTRO DE TABLE 
 $(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
+	$("#myInput").on("keyup", function() {
+		var value = $(this).val().toLowerCase();
+		$("#myTable tr").filter(function() {
+			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	});
 });
 
+//Formata campo
+$(document).ready(function () { 
+	var $campo = $(".press");
+	$campo.mask('00/00', {reverse: true});
+});
+
+var $input    = document.getElementById('foto'),
+$fileName = document.getElementById('file-name');
+
+$input.addEventListener('change', function(){
+	$fileName.textContent = this.value;
+});
+
+
+/*$(document).ready(function(){
+	$('a[data-confirm]').click.(function(ev){
+		var href = $(this).attr('href');
+		if(!$('#confirm').length){
+			$('body').append('<div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog" role="document"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Excuir Cadastro</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body">Tem certeza que deseja excluir este cadastro?</div><div class="modal-footer"><button type="button" class="btn btn-success" data-dismiss="modal">NÃO</button><a  class="btn btn-primary text-white" id="dataComfirmOK">SIM</a></div></div></div></div>	');
+			}
+
+			$('#dataComfirmOK').attr('href', href);
+			$('#confirm').modal({show : true});
+			return false;
+		});
+
+
+
+	});*/
 

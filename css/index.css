@@ -94,6 +94,29 @@ body {background:#7cbac1; margin: 0;}
     outline: none;
 }
 /*********************************************************/
+/*MUDAR O INPUT FILE*/
+input[type='file'] {
+  display: none
+}
+
+.input-wrapper label {
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 2%;
+    border: 1px solid #9C9C9C;
+	background: #fff;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-wrapper label:hover {
+  background-color: #9C9C9C;
+  border-color: #000;
+}
+/***********/
 footer{
     position: absolute;
     bottom: 0;
@@ -122,3 +145,5 @@ footer{
 	.logo{line-height: 40px}
 
 }
+
+

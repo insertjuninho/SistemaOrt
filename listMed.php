@@ -15,8 +15,8 @@
     <a href="sair.php"><img src="img/out.png" class="out img-fluid"></a>
   </header>
   <div class="container">
-    <input class="pesq form-control form-control-lg" type="search" name="pesq" placeholder="Pesquisar Paciente" id="myInput">
-    <table class="table" id="func">
+    <input class="pesq form-control form-control-lg" type="search" name="pesq" placeholder="Pesquisar Médico" id="myInput">
+    <table class="table table-striped" id="func">
       <thead>
         <tr>
           <th style="width:3%">ID</th>
@@ -27,11 +27,12 @@
       <?php 
       include "banco.php";
 
-      $sql    = ("SELECT * FROM acesso WHERE idMed >= 2");
+      $sql    = ("SELECT * FROM acesso WHERE situacao = 'ativo'");
       $result = mysqli_query($con , $sql);
-      while ($row = mysqli_fetch_array($result)) {
-        $id   = $row['idMed'];
-        $nome = $row['nomeMed'];
+      while ($f = mysqli_fetch_array($result)) {
+        $id   = $f['idMed'];
+        $idc = base64_encode($id);
+        $nome = $f['nomeMed'];
         ?>
         <tbody id="myTable">
           <tr>
@@ -43,13 +44,10 @@
             <td class="td-actions"><a href="ediPac.php"><button type="button" rel="tooltip" class="btn btn-info btn-just-icon btn-sm" data-original-title="" title="">
               <i class="material-icons">Detalhes</i>
             </button></a>
-            <a href="historicoPAC.php"><button type="button" rel="tooltip" class="btn btn-success btn-just-icon btn-sm" data-original-title="" title="">
-              <i class="material-icons">Histórico</i>
-            </button></a>
-              <a href="delMed.php?idMed=<?php echo $id;?>">
-            <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-original-title="" title="">
+            <button type="button" rel="tooltip" class="btn btn-danger btn-just-icon btn-sm" data-toggle="modal" 
+            data-target="#comfirm">
                 <i class="material-icons">Deletar</i>
-            </button></a>
+            </button>
           </td>          
         </tr>
       </tbody>
@@ -59,6 +57,26 @@
 <footer>
   <p><?php echo "Desenvolvido por ©ACCIO - 2018"; ?></p> 
 </footer>
+<!-- MODAL DE CONFIRMAÇÃO -->
+<div class="modal fade" id="comfirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        EXCLUIR
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que quer excluir este cadastro?
+      </div>
+      <div class="modal-footer">
+        <a href="delete.php?id=<?php echo $idc?>" class="btn btn-success">SIM</a>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">NÃO</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

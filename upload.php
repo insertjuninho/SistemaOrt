@@ -1,6 +1,6 @@
 <?php
 // Pasta onde o arquivo vai ser salvo
-$_UP['pasta'] = 'imgSint/';
+$_UP['pasta'] = 'img/categorias/';
 // Tamanho máximo do arquivo (em Bytes)
 $_UP['tamanho'] = 1024 * 1024 * 10; // 10Mb
 // Array com as extensões permitidas
@@ -15,7 +15,7 @@ $_UP['erros'][3] = 'O upload do arquivo foi feito parcialmente';
 $_UP['erros'][4] = 'Não foi feito o upload do arquivo';
 // Verifica se houve algum erro com o upload. Se sim, exibe a mensagem do erro
 if ($_FILES['arquivos']['error'] != 0) {
-  
+
   die("Não foi possível fazer o upload, erro:" . $_UP['erros'][$_FILES['arquivos']['error']]);
   exit; // Para a execução do script
 }
@@ -53,15 +53,26 @@ if ($_UP['renomeia'] == true) {
   // Mantém o nome original do arquivo
   $nome_final = $_FILES['arquivos']['name'];
 }
-  
+
 // Depois verifica se é possível mover o arquivo para a pasta escolhida
 if (move_uploaded_file($_FILES['arquivos']['tmp_name'], $_UP['pasta'] . $nome_final)) {
   // Upload efetuado com sucesso, exibe uma mensagem e um link para o arquivo
-  echo "Upload efetuado com sucesso!";
-  
-} else {
-  // Não foi possível fazer o upload, provavelmente a pasta está incorreta
-  echo "Não foi possível enviar o arquivo, tente novamente";
-}
+ ?>
+  <script>
+    var resposta = confirm("CADASTRADO !!!\n\nOK para adicionar sintomas.\n\nCANCELAR para voltar a pagina incial");
+    if(resposta)
+    {
+      location.href='addCategorias.php';
+    } else {
+      location.href='admin.php';
+    } 
+  </script>
 
-header("Location:addCategorias.php");
+<?php 
+  } else {
+  // Não foi possível fazer o upload, provavelmente a pasta está incorreta
+    echo"<script>
+    alert('Não foi possível enviar o arquivo, tente novamente!');window.location.href='addCategorias.php';
+    </script>";
+  }
+  ?>
