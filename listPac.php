@@ -14,7 +14,7 @@
     <p class="logo">LOGO</p>
     <a href="sair.php"><img src="img/out.png" class="out img-fluid"></a>
   </header>
-  <div class="container">
+  <div class="container mb-5">
     <input class="pesq form-control form-control-lg" type="search" name="pesq" placeholder="Pesquisar Paciente" id="myInput">
     <table class="table table-striped" id="func">
       <thead>

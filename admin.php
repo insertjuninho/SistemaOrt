@@ -93,7 +93,7 @@ if(empty($_SESSION['usuario']) and empty($_SESSION['senha'])){?>
           <P>ADICIONAR CATEGORIAS</P>
         </div>
       </a>  
-      <a id="a" href="editc.php">
+      <a id="a" href="editcateg.php">
         <div class="card-counter" >
           <P>EDITAR CATEGORIAS</P>
         </div>

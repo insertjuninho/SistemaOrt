@@ -1,23 +1,14 @@
 <?php 
-
-$categorias = $_POST['categorias'];
-$sintomas	= $_POST['sintomas'];
-
 include "banco.php";
+$id = $_POST['id'];
+$categorias = $_POST['categorias'];
 
-$query = "UPDATE categorias SET categorias='$categorias'
-			WHERE id = $id; 
-			";	
 
-$query2 = "UPDATE sintomas SET sintomas='$sintomas'
-			WHERE id = $id; 
-			";
+  $query = "update categorias set categorias = '$categorias' where idCat = $id";
+  $consulta = mysqli_query($con, $query);
 
-mysqli_query($con,$query);
+  header("Location:editcateg.php");
 
-mysqli_query($con,$query2);
-
-header("Location:admin.php");
 
 
 
