@@ -1,6 +1,6 @@
 <?php
 // Pasta onde o arquivo vai ser salvo
-$_UP['pasta'] = 'img/categorias/';
+$_UP['pasta'] = 'img/sintomas/';
 // Tamanho máximo do arquivo (em Bytes)
 $_UP['tamanho'] = 1024 * 1024 * 10; // 10Mb
 // Array com as extensões permitidas
@@ -37,16 +37,16 @@ if ($_UP['tamanho'] < $_FILES['arquivos']['size']) {
 if ($_UP['renomeia'] == true) {
   // Cria um nome baseado no UNIX TIMESTAMP atual e com extensão .png
   include "banco.php";
-  $query = "select * from categorias order by idCat desc limit 1";
+  $query = "select * from sintomas order by idSint desc limit 1";
   $consulta = mysqli_query($con, $query);
   if($p = mysqli_fetch_array($consulta)){
-    $id = $p['idCat'];
+    $id = $p['idSint'];
   }
 
   $nome_final = "$id.$extensao";
 
   // utilizar Where para não ganhar diploma, se não utilizar Where, todos os produtos receberão o mesmo nome de imagem.
-  mysqli_query($con, "update categorias set img = '$nome_final' where idCat = $id");
+  mysqli_query($con, "update sintomas set img = '$nome_final' where idSint = $id");
 
 
 } else {
@@ -59,20 +59,14 @@ if (move_uploaded_file($_FILES['arquivos']['tmp_name'], $_UP['pasta'] . $nome_fi
   // Upload efetuado com sucesso, exibe uma mensagem e um link para o arquivo
  ?>
   <script>
-    var resposta = confirm("CADASTRADO !!!\n\nOK para adicionar sintomas.\n\nCANCELAR para voltar a pagina incial");
-    if(resposta)
-    {
-      location.href='addCategorias.php';
-    } else {
-      location.href='admin.php';
-    } 
-  </script>
+      alert("SINTOMA CADASTRADO");window.location.href='editSint.php';
+    </script>
 
 <?php 
   } else {
   // Não foi possível fazer o upload, provavelmente a pasta está incorreta
     echo"<script>
-    alert('Não foi possível enviar o arquivo, tente novamente!');window.location.href='addCategorias.php';
+    alert('Não foi possível enviar o arquivo, tente novamente!');window.location.href='editSint.php';
     </script>";
   }
   ?>

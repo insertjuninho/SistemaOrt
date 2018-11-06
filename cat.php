@@ -1,18 +1,19 @@
 <?php 
 
-$categorias = $_POST['categorias'];
-$sintomas 	= $_POST['sintomas'];
-
+$categoria = $_POST['categoria'];
 
 include "banco.php";
 
-$query =  "insert  into  categorias (categorias,sintomas) values('$categorias','$sintomas')";
+$query =  "insert  into  categorias (categorias) values('$categoria')";
 
-mysqli_query($con,$query); 
+$insert = mysqli_query($con, $query);
 
-include "upload.php";
-
-header('Refresh: 3, addCategorias.php');
-
-
- ?>
+if($insert == 1){?>
+	<script>
+		alert("CATEGORIA CADASTRADA");window.location.href='editcateg.php';
+	</script>
+<?php }else{ ?>
+	<script>
+		alert("OPS!! OCORREOU UM ERRO, TENTE NOVAMENTE!!");window.location.href='editcateg.php';
+	</script>
+	<?php } ?>

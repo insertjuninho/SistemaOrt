@@ -7,20 +7,24 @@
 	$page5 = $_POST['page5'];
 	$page6 = $_POST['page6'];
 	$page7 = $_POST['page7'];
+	$categ = $_POST['categoria'];
 
 	include "banco.php";
 
-	$query = "insert into sintomas(page1, page2, page3, page4, page5, page6, page7)
+	$query = "insert into historico(page1, page2, page3, page4, page5, page6, page7, categoria)
 	 
 	values(
-	'$page1', '$page2', '$page3', '$page4', '$page5', '$page6', '$page7')";
+	'$page1', '$page2', '$page3', '$page4', '$page5', '$page6', '$page7', '$categ')";
 	
 
-	$consulta = mysqli_query($con, $query);
+	$insert = mysqli_query($con, $query);
 
-	if($consulta == 1){
-		echo "Cadastrado";
-	}else{
-		echo "Não Cadastrado";
-	}
-?>
+	if($insert == 1){?>
+		<script>
+			alert("PACIENTE CADASTRADO");window.location.href='listpac.php';
+		</script>
+	<?php }else{ ?>
+		<script>
+			alert("OPS!! OCORREOU UM ERRO, TENTE NOVAMENTE!!");window.location.href='sintomas.php';
+		</script>
+<?php } ?>

@@ -4,10 +4,10 @@
   $id = base64_decode($idc);
   
   
-  $query = "delete from sintomas where idSint = $id";
+  $query = "delete from categorias where idCat = $id";
   $consulta = mysqli_query($con, $query);
 
-  header("Location:editSint.php");
+  header("Location:editCateg.php");
 
 
  ?>

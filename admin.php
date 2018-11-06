@@ -88,14 +88,14 @@ if(empty($_SESSION['usuario']) and empty($_SESSION['senha'])){?>
     </div>
 
     <div class="box">
-      <a id="a" href="addCategorias.php">
+      <a id="a" href="editcateg.php">
         <div class="card-counter">
-          <P>ADICIONAR CATEGORIAS</P>
+          <P>GERENCIAR CATEGORIAS</P>
         </div>
       </a>  
-      <a id="a" href="editcateg.php">
-        <div class="card-counter" >
-          <P>EDITAR CATEGORIAS</P>
+      <a id="a" href="editSint.php">
+        <div class="card-counter">
+          <P>GERENCIAR SINTOMAS</P>
         </div>
       </a>  
     </div>

@@ -23,16 +23,20 @@
       <!-- ADICIONAR O WHILE DO PHP AQUI -->
      <?php
      include "banco.php";
-     $pesquisar = "select * from categorias limit 4";
+     $pesquisar = "select * from categorias";
      $buscar = mysqli_query($con,$pesquisar); 
      while($b=mysqli_fetch_assoc($buscar)){
+        $id   = $b['idCat'];
+        $idc = base64_encode($id);
+        $cat = $b['categorias'];
+        $catcry = base64_encode($cat);
       ?> 
       <div class="col-md-3">
-        <a href="sintomas.php" id="link">
+        <a href="sintomas.php?forcat=<?php echo $catcry?>" id="link">
           <div class="categoria">
             <div class="botao pb-4">
               <img src="img/semft.png" class="img-fluid" />
-              <h3><?php echo $b['categorias']; ?></h3>
+              <h3><?php echo $cat ?></h3>
               <!-- buscar nome do banco -->
             </div>
         </div>

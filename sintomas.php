@@ -1,3 +1,13 @@
+<?php 
+include "banco.php";
+$catcry = $_GET['forcat'];
+$categ = base64_decode($catcry);
+session_start();
+if(empty($_SESSION['usuario']) and empty($_SESSION['senha'])){?>
+  <script>
+    alert("VOCÊ PRECISA ESTAR LOGADO PARA ACESSAR ESTA PAGINA!");window.location.href='index.php';
+  </script>
+  <?php } ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -14,18 +24,18 @@
     <a href="sair.php"><img src="img/out.png" class="out img-fluid"></a>
   </header>
   <h1 class="text-center titulo">Selecione os Sintomas</h1>
-  <div class="container col-lg-6 col-xl-11 col-lg-offset-3">
+  <div class="container col-lg-6 col-xl-11 col-lg-offset-3 mb-5">
    <div class="row">
      <div class="col-sm-12 col-md-12" id="cad">
        <form id="msform" method="post" action="cad.php">
 
         <?php
         include "banco.php";
-        $sql="SELECT sintomas FROM categorias WHERE categorias = 'pe';";
+        $sql="SELECT nome FROM sintomas WHERE categorias = '$categ';";
         $resultado=mysqli_query($con,$sql);
         $y=0;
         while ($row=mysqli_fetch_array($resultado,MYSQLI_ASSOC)){
-          $k[$y]=$row['sintomas'];
+          $k[$y]=$row['nome'];
           $y++;
         }
         $i=0;
@@ -42,8 +52,9 @@
               <label class="radio">
                 <div class="categoria">
                   <img src="img/ft.jpg" class="img-fluid" >
-                  <input type="radio" name="page1" value="<?php echo $k[$x] ?>" class="radio">
-                  <p><?php echo $k[$x]; ?></p>
+                  <input type="radio" name="page<?php echo $cont ?>" value="<?php echo $k[$x] ?>" class="radio">
+                  <input type="hidden" name="categoria" value="<?php echo $categ ?>">
+                   <p><?php echo $k[$x]; ?></p>
                 </div>
               </label>
             </div>
@@ -52,7 +63,6 @@
           }else{
          	echo "<input type='button' name='previous' class='previous action-button-previous' value='Voltar' id='voltar'/>";
             echo "<input type='button' name='next' class='next action-button' value='Próximo' id='next'/></fieldset>";
-
             $i=0;
             $x=$x-1;            
             ?>
@@ -68,7 +78,7 @@
     </div>
   </div>
 </div>
-<footer>
+<footer >
   <p><?php echo "Desenvolvido por © ACCIO-2018"; ?></p>
 </footer>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
