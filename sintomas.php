@@ -7,7 +7,16 @@ if(empty($_SESSION['usuario']) and empty($_SESSION['senha'])){?>
   <script>
     alert("VOCÊ PRECISA ESTAR LOGADO PARA ACESSAR ESTA PAGINA!");window.location.href='index.php';
   </script>
-  <?php } ?>
+  <?php 
+} 
+if (empty($_GET['forcat'])) {
+
+  	echo"<script>
+    		alert('SELECIONE UMA CATEGORIA');window.location.href='categorias.php';
+  		</script>";
+  }
+
+  ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
@@ -23,7 +32,7 @@ if(empty($_SESSION['usuario']) and empty($_SESSION['senha'])){?>
     <a href="pag2.php" style="text-decoration: none"><p class="logo">LOGO</p></a>
     <a href="sair.php"><img src="img/out.png" class="out img-fluid"></a>
   </header>
-  <h1 class="text-center titulo">Selecione os Sintomas</h1>
+	  <h1 class="text-center titulo">Selecione os Sintomas</h1>
   <div class="container col-lg-6 col-xl-11 col-lg-offset-3 mb-5">
    <div class="row">
      <div class="col-sm-12 col-md-12" id="cad">
