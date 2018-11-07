@@ -40,7 +40,7 @@
   ?>
         <div class="card mt-5">
           <div class="card-header">
-            <h4 class="card-title"><?php echo "Identeifcação - $id" ?></h4>
+            <h4 class="card-title"><?php echo "Indentificação - $id" ?></h4>
           </div>
 
           <div class="tab-content" id="myTabContent">
